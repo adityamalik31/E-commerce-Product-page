@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: sans-serif;
+            background: #f4f4f4;
+        }
+        .controls {
+            background: white;
+            padding: 15px;
+            border-bottom: 1px solid lightgray;
+        }
+        select {
+            margin: 10px;
+            padding: 5px;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border: 1px solid lightgray;
+            padding: 15px;
+            box-shadow: 2px 2px 5px silver;
+        }
+        .price { color: green; font-weight: bold; }
+        .rating { color: orange; }
+    </style>
+</head>
+<body>
+    <h1>Kartify</h1>
+    <div class="controls">
+        Filter By:
+        <select id="catSelect" onchange="render()">
+            <option value="all">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Home">Home</option>
+            <option value="Books">Books</option>
+        </select>
+        Sort By:
+        <select id="sortSelect" onchange="render()">
+            <option value="none">Select Sorting</option>
+            <option value="priceLow">Price: Low to High</option>
+            <option value="priceHigh">Price: High to Low</option>
+            <option value="ratingHigh">Rating: High to Low</option>
+            <option value="nameAsc">Name: A-Z</option>
+        </select>
+    </div>
+    <div id="container"></div>
+    <script src="script2.js"></script>
+
+</body>
+</html>
